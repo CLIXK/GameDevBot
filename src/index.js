@@ -12,7 +12,7 @@ bot.commands = new Discord.Collection();
 bot.on('ready', () => {
     console.log('Bot online');
 
-    fs.readdir('./commands', (err, files) => {
+    fs.readdir('./src/commands', (err, files) => {
         if (err) return console.log(err);
 
         const jsfile = files.filter((f) => f.endsWith('.js'));
