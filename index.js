@@ -15,7 +15,7 @@ bot.on('ready', () => {
     fs.readdir('./commands', (err, files) => {
         if (err) return console.log(err);
 
-        const jsfile = files.filter((f) => f.split('.').pop() == 'js');
+        const jsfile = files.filter((f) => f.endsWith('.js'));
 
         if (jsfile.length <= 0) return console.log('Could not find commands!');
 
@@ -29,6 +29,7 @@ bot.on('ready', () => {
 bot.on('message', (message) => {
     if (message.author.bot) return;
     if (message.channel.type !== 'text') return;
+    if (!message.content.startsWith(prefix)) return;
     // hello there ['hello', 'there']
     // !ban user reason ['user', 'reason']
     // Breaking Rules ['breaking', 'rules'] breaking rules
@@ -37,11 +38,9 @@ bot.on('message', (message) => {
     const cmd = MessageArray[0].slice(prefix.length);
     const args = MessageArray.slice(1);
 
-    if (!message.content.startsWith(prefix)) return;
-
     const commandfile = bot.commands.get(cmd);
     if (commandfile) {
-        commandfile.run(bot, message, args);
+        commandfile.run(message, args);
     }
 });
 
