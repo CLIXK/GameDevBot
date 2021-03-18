@@ -1,6 +1,12 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+require('dotenv').config();
 const fs = require('fs');
+
+const prefix = process.env.PREFIX;
+const token = process.env.TOKEN;
+
+// console.log(token);
 bot.commands = new Discord.Collection();
 
 bot.on('ready', () => {
@@ -23,7 +29,6 @@ bot.on('ready', () => {
 bot.on('message', (message) => {
     if (message.author.bot) return;
     if (message.channel.type !== 'text') return;
-    const prefix = '!';
     // hello there ['hello', 'there']
     // !ban user reason ['user', 'reason']
     // Breaking Rules ['breaking', 'rules'] breaking rules
@@ -40,4 +45,4 @@ bot.on('message', (message) => {
     }
 });
 
-bot.login('ODE4NTczNTI4ODcyOTEwODQ5.YEaCAQ.WB_kUQcSnP2IWeqEo1bJohJr7bo');
+bot.login(token);
