@@ -27,9 +27,12 @@ bot.on('ready', () => {
 });
 
 bot.on('message', (message) => {
-    if (message.author.bot) return;
-    if (message.channel.type !== 'text') return;
-    if (!message.content.startsWith(prefix)) return;
+    if (
+        message.author.bot ||
+        message.channel.type !== 'text' ||
+        !message.content.startsWith(prefix)
+    )
+        return;
     // hello there ['hello', 'there']
     // !ban user reason ['user', 'reason']
     // Breaking Rules ['breaking', 'rules'] breaking rules
