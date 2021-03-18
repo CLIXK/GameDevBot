@@ -1,0 +1,30 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": ["eslint:recommended", "prettier"],
+    "plugins": ["prettier"],
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+        "comma-dangle": "error",
+        "class-methods-use-this": "off",
+        "func-names": "off",
+        "no-console": "off",
+        "no-undef": "off",
+        "no-shadow-restricted-names": "error",
+        "no-unused-vars": "warn",
+        "prefer-const": "warn",
+        "indent": [
+            "error",
+            4,
+            { "SwitchCase": 1, "ArrayExpression": 1, "ObjectExpression": 1 }
+        ],
+        "semi": "warn",
+        "semi-style": ["error", "last"],
+        "spaced-comment": "error",
+        "quotes": ["error", "single", { "avoidEscape": true }]
+    }
+}
