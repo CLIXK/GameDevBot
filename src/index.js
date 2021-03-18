@@ -6,7 +6,6 @@ const fs = require('fs');
 const prefix = process.env.PREFIX;
 const token = process.env.TOKEN;
 
-// console.log(token);
 bot.commands = new Discord.Collection();
 
 bot.on('ready', () => {
