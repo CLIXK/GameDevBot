@@ -12,12 +12,4 @@
 
 - [ ] Music bot
 
-- [ ] Create a todo for #task-and-deadline channel.
-
-- [ ] Add a countdown for deadline of the task.
-
-- [ ] Role reaction for completion of task.
-
-- [ ] Ask for proof of completion and send proof to #dev-updates.
-
 - [ ] Send all github commits to text channel.
